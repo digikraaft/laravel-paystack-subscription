@@ -1,8 +1,8 @@
 <?php
 
-namespace Digikraaft\Skeleton\Tests;
+namespace Digikraaft\PaystackSubscription\Tests;
 
-use Digikraaft\Skeleton\SkeletonServiceProvider;
+use Digikraaft\PaystackSubscription\PaystackSubscriptionServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
@@ -17,7 +17,7 @@ class TestCase extends Orchestra
     protected function getPackageProviders($app)
     {
         return [
-            SkeletonServiceProvider::class,
+            PaystackSubscriptionServiceProvider::class,
         ];
     }
 
@@ -30,9 +30,8 @@ class TestCase extends Orchestra
             'prefix' => '',
         ]);
 
-        /*
-        include_once __DIR__.'/../database/migrations/create_skeleton_tables.php.stub';
-        (new CreatePackageTables())->up();
-        */
+//        include_once __DIR__.'/../database/migrations/create_subscriptions_tables.php';
+//           (new CreatePackageTables())->up();
+
     }
 }

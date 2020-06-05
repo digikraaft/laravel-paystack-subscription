@@ -27,12 +27,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Digikraaft\\Skeleton\\": "src"
+            "Digikraaft\\PaystackSubscription\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Digikraaft\\Skeleton\\Tests\\": "tests"
+            "Digikraaft\\PaystackSubscription\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -47,10 +47,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Digikraaft\\Skeleton\\SkeletonServiceProvider"
+                "Digikraaft\\PaystackSubscription\\PaystackSubscriptionServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "Digikraaft\\Skeleton\\SkeletonFacade"
+                "PaystackSubscription": "Digikraaft\\PaystackSubscription\\PaystackSubscriptionFacade"
             }
         }
     },

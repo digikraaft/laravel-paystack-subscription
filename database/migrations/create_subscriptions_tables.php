@@ -8,7 +8,7 @@ class CreateSkeletonTables extends Migration
 {
     public function up()
     {
-        Schema::create('skeleton_tables', function (Blueprint $table) {
+        Schema::create('subscriptions_tables', function (Blueprint $table) {
             $table->bigIncrements('id');
 
             // add fields

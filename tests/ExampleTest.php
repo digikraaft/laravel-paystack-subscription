@@ -1,6 +1,6 @@
 <?php
 
-namespace Digikraaft\Skeleton\Tests;
+namespace Digikraaft\PaystackSubscription\Tests;
 
 class ExampleTest extends TestCase
 {

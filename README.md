@@ -1,5 +1,5 @@
 # Introduction
-A simple interface to [Paystack's](https://paystack.com/>) subscription billing services. It takes off the pain of implementing subscription management yourself.
+A simple interface to [Paystack's](https://paystack.com/>) subscription billing services. It takes the pain of implementing subscription management off you.
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/digikraaft/laravel-paystack-subscription.svg?style=flat-square)](https://packagist.org/packages/digikraaft/laravel-paystack-subscription)
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/digikraaft/laravel-paystack-subscription/run-tests?label=tests)](https://github.com/digikraaft/laravel-paystack-subscription/actions?query=workflow%3Arun-tests+branch%3Amaster)
@@ -20,13 +20,13 @@ composer require digikraaft/laravel-paystack-subscription
 You can publish and run the migrations with:
 
 ```bash
-php artisan vendor:publish --provider="Digikraaft\Skeleton\SkeletonServiceProvider" --tag="migrations"
+php artisan vendor:publish --provider="Digikraaft\Paystack\PaystackSubscritpionServiceProvider" --tag="migrations"
 php artisan migrate
 ```
 
 You can publish the config file with:
 ```bash
-php artisan vendor:publish --provider="Digikraaft\Skeleton\SkeletonServiceProvider" --tag="config"
+php artisan vendor:publish --provider="Digikraaft\PaystackSubscritpion\PaystackSubscritpionServiceProvider" --tag="config"
 ```
 
 This is the contents of the published config file:
@@ -37,11 +37,6 @@ return [
 ```
 
 ## Usage
-
-``` php
-$skeleton = new Digikraaft\Skeleton();
-echo $skeleton->echoPhrase('Hello, Digikraaft!');
-```
 
 ## Testing
 
