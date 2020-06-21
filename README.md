@@ -425,7 +425,7 @@ To get started, add the **testing** version of your Paystack secret and other re
 <env name="PAYSTACK_TRANSACTION_REF_INVALID" value="<existing_paystack_transaction_id>" />
 <env name="DB_CONNECTION" value="testing"/>
 ```
-When testing, ensure the environment variables above are created in stripe and correspond to
+When testing, ensure the environment variables above are created in paystack and correspond to
 the description in the values.
 
 Use the command below to run your tests:
