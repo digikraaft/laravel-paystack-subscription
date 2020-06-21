@@ -1,9 +1,10 @@
 # Introduction
-A simple interface to [Paystack's](https://paystack.com/>) subscription billing services. It takes the pain of implementing subscription management off you.
+A simple, fluent interface to [Paystack's](https://paystack.com/>) subscription billing services. It takes the pain of implementing subscription management off you.
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/digikraaft/laravel-paystack-subscription.svg?style=flat-square)](https://packagist.org/packages/digikraaft/laravel-paystack-subscription)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/digikraaft/laravel-paystack-subscription/run-tests?label=tests)](https://github.com/digikraaft/laravel-paystack-subscription/actions?query=workflow%3Arun-tests+branch%3Amaster)
-[![Total Downloads](https://img.shields.io/packagist/dt/digikraaft/laravel-paystack-subscription.svg?style=flat-square)](https://packagist.org/packages/digikraaft/laravel-paystack-subscription)
+[![Build Status](https://travis-ci.com/digikraaft/laravel-paystack-subscription.svg?branch=master)](https://travis-ci.com/digikraaft/laravel-paystack-subscription)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/digikraaft/laravel-paystack-subscription/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/digikraaft/laravel-paystack-subscription/?branch=master)
+[![Code Intelligence Status](https://scrutinizer-ci.com/g/digikraaft/laravel-paystack-subscription/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
 This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
@@ -58,7 +59,7 @@ If you discover any security related issues, please email dev@digitalkraaft.com 
 
 ## Credits
 
-- [Tim Oladoyinbo](https://github.com/timoladoyino)
+- [Tim Oladoyinbo](https://github.com/timoladoyinbo)
 - [All Contributors](../../contributors)
 
 ## License

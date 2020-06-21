@@ -1,9 +1,11 @@
 {
-    "name": "digikraaft/laravel-paystack-subscription",
     "description": "A simple interface to Paystack's subscription billing services. It takes off the pain of implementing subscription management.",
     "keywords": [
         "digikraaft",
-        "laravel-paystack-subscription"
+        "laravel-paystack-subscription",
+        "paystack",
+        "subscription",
+        "billing"
     ],
     "homepage": "https://github.com/digikraaft/laravel-paystack-subscription",
     "license": "MIT",
@@ -16,7 +18,20 @@
         }
     ],
     "require": {
-        "php": "^7.4"
+        "php": "^7.4",
+        "ext-json": "^7.4",
+        "digikraaft/paystack-php": "^1.0",
+        "dompdf/dompdf": "^0.8.5",
+        "guzzlehttp/guzzle": "^6.5",
+        "illuminate/contracts": "^7.15",
+        "illuminate/database": "^7.15",
+        "illuminate/http": "^7.15",
+        "illuminate/notifications": "^7.15",
+        "illuminate/routing": "^7.15",
+        "illuminate/support": "^7.15",
+        "illuminate/view": "^7.15",
+        "nesbot/carbon": "^2.35",
+        "symfony/http-kernel": "^5.1"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.16",

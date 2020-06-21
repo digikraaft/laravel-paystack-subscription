@@ -3,35 +3,43 @@
 namespace Digikraaft\PaystackSubscription\Tests;
 
 use Digikraaft\PaystackSubscription\PaystackSubscriptionServiceProvider;
-use Orchestra\Testbench\TestCase as Orchestra;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Schema;
+use Orchestra\Testbench\TestCase as OrchestraTestCase;
 
-class TestCase extends Orchestra
+abstract class TestCase extends OrchestraTestCase
 {
-    public function setUp(): void
+    use RefreshDatabase;
+
+    /**
+     * Setup the test environment.
+     */
+    protected function setUp(): void
     {
         parent::setUp();
 
-        $this->withFactories(__DIR__.'/database/factories');
+        $this->setUpDatabase();
     }
 
     protected function getPackageProviders($app)
     {
-        return [
-            PaystackSubscriptionServiceProvider::class,
-        ];
+        return [PaystackSubscriptionServiceProvider::class];
     }
 
-    public function getEnvironmentSetUp($app)
+    protected function setUpDatabase()
     {
-        $app['config']->set('database.default', 'sqlite');
-        $app['config']->set('database.connections.sqlite', [
-            'driver' => 'sqlite',
-            'database' => ':memory:',
-            'prefix' => '',
-        ]);
+        Schema::create('users', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->string('email');
+            $table->string('password')->nullable();
+            $table->string('remember_token')->nullable();
+            $table->timestamps();
+        });
 
-//        include_once __DIR__.'/../database/migrations/create_subscriptions_tables.php';
-//           (new CreatePackageTables())->up();
+        include_once __DIR__ . '/../database/migrations/create_subscription_tables.php.stub';
 
+        (new \CreateSubscriptionTables)->up();
     }
 }

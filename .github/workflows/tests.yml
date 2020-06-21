@@ -1,4 +1,5 @@
-name: run-tests
+
+name: Tests
 
 on: [push, pull_request]
 
@@ -6,17 +7,28 @@ jobs:
   test:
     runs-on: ${{ matrix.os }}
     strategy:
-      fail-fast: true
       matrix:
-        os: [ubuntu-latest, windows-latest]
         php: [7.4]
-        laravel: [7.*]
+        laravel: [^7.*, ^6.*]
         dependency-version: [prefer-lowest, prefer-stable]
+        os: [ubuntu-latest, windows-latest]
         include:
           - laravel: 7.*
             testbench: 5.*
+          - laravel: 6.*
+            testbench: 4.*
 
     name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.dependency-version }} - ${{ matrix.os }}
+
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+          MYSQL_DATABASE: paystack_sub
+        ports:
+          - 3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
 
     steps:
       - name: Checkout code
@@ -29,7 +41,7 @@ jobs:
           key: dependencies-laravel-${{ matrix.laravel }}-php-${{ matrix.php }}-composer-${{ hashFiles('composer.json') }}
 
       - name: Setup PHP
-        uses: shivammathur/setup-php@v1
+        uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick
@@ -39,6 +51,16 @@ jobs:
         run: |
           composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
           composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction --no-suggest
-
       - name: Execute tests
         run: vendor/bin/phpunit
+        env:
+          PAYSTACK_SECRET: ${{ secrets.PAYSTACK_SECRET }}
+          PAYSTACK_PLAN: ${{ secrets.PAYSTACK_PLAN }}
+          PAYSTACK_OTHER_PLAN: ${{ secrets.PAYSTACK_OTHER_PLAN }}
+          PAYSTACK_TRANSACTION_ID: ${{ secrets.PAYSTACK_TRANSACTION_ID }}
+          PAYSTACK_TRANSACTION_ID_INVALID: ${{ secrets.PAYSTACK_TRANSACTION_ID_INVALID }}
+          PAYSTACK_CUSTOMER: ${{ secrets.PAYSTACK_CUSTOMER }}
+          PAYSTACK_OTHER_CUSTOMER: ${{ secrets.PAYSTACK_OTHER_CUSTOMER }}
+          PAYSTACK_TRANSACTION_REF: ${{ secrets.PAYSTACK_TRANSACTION_REF }}
+          PAYSTACK_TRANSACTION_REF_INVALID: ${{ secrets.PAYSTACK_TRANSACTION_REF_INVALID }}
+          DB_PORT: ${{ job.services.mysql.ports[3306] }}

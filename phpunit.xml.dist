@@ -25,4 +25,20 @@
         <log type="coverage-text" target="build/coverage.txt"/>
         <log type="coverage-clover" target="build/logs/clover.xml"/>
     </logging>
+    <php>
+        <env name="PAYSTACK_SECRET" value="sk_test_123456abcde"/>
+        <env name="PAYSTACK_PLAN" value="PLN_123456" />
+        <env name="PAYSTACK_OTHER_PLAN" value="PLN_234567" />
+        <env name="PAYSTACK_TRANSACTION_ID" value="12345679" />
+        <env name="PAYSTACK_TRANSACTION_ID_INVALID" value="234567890" />
+        <env name="PAYSTACK_TRANSACTION_REF" value="abcf12345679" />
+        <env name="PAYSTACK_TRANSACTION_REF_INVALID" value="Tref3456869" />
+        <env name="PAYSTACK_CUSTOMER" value="CUS_abcdefgh123" />
+        <env name="PAYSTACK_CUSTOMER" value="CUS_123abcdefgh123" />
+        <env name="DB_CONNECTION" value="mysql"/>
+        <env name="DB_HOST" value="127.0.0.1"/>
+        <env name="DB_PORT" value="3306"/>
+        <env name="DB_DATABASE" value="paystack_sub"/>
+        <env name="DB_USERNAME" value="root"/>
+    </php>
 </phpunit>
