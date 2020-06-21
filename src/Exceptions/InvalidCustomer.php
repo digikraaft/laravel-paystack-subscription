@@ -3,7 +3,6 @@
 
 namespace Digikraaft\PaystackSubscription\Exceptions;
 
-
 class InvalidCustomer extends \Exception
 {
 

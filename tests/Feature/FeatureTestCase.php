@@ -3,11 +3,10 @@
 
 namespace Digikraaft\PaystackSubscription\Tests\Feature;
 
-
-use Illuminate\Database\Eloquent\Model as Eloquent;
-use Digikraaft\PaystackSubscription\Tests\User;
-use Digikraaft\PaystackSubscription\Tests\TestCase;
 use Digikraaft\Paystack\Paystack;
+use Digikraaft\PaystackSubscription\Tests\TestCase;
+use Digikraaft\PaystackSubscription\Tests\User;
+use Illuminate\Database\Eloquent\Model as Eloquent;
 
 abstract class FeatureTestCase extends TestCase
 {

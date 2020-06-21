@@ -52,7 +52,6 @@ class SubscriptionTest extends FeatureTestCase
         $this->assertFalse($subscription->pastDue());
 
         $subscription->enable();
-
     }
 
     public function test_invalid_transaction_or_authorization_results_in_an_exception()

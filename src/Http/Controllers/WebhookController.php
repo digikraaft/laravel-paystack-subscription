@@ -8,9 +8,9 @@ use Digikraaft\PaystackSubscription\Events\WebhookReceived;
 use Digikraaft\PaystackSubscription\Http\Middleware\VerifyWebhookSignature;
 use Digikraaft\PaystackSubscription\PaystackSubscription;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Str;
 use Symfony\Component\HttpFoundation\Response;
-use Illuminate\Routing\Controller;
 
 class WebhookController extends Controller
 {

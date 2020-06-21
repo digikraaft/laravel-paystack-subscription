@@ -139,6 +139,7 @@ trait ManagesCustomer
         $this->assertCustomerExists();
 
         Paystack::setApiKey(config('paystacksubscription.secret', env('PAYSTACK_SECRET')));
+
         return PaystackCustomer::fetch($this->paystack_id);
     }
 

@@ -10,7 +10,6 @@ use Digikraaft\PaystackSubscription\Tests\TestCase;
 use Digikraaft\PaystackSubscription\Tests\User;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\QueryException;
 
 class SubscriptionTest extends TestCase
 {

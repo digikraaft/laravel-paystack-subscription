@@ -3,8 +3,6 @@
 
 namespace Digikraaft\PaystackSubscription\Exceptions;
 
-
-
 class CustomerAlreadyExist extends \Exception
 {
 

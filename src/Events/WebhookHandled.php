@@ -27,5 +27,4 @@ class WebhookHandled
     {
         $this->payload = $payload;
     }
-
 }
