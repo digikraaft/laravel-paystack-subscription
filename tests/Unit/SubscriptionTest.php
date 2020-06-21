@@ -20,7 +20,7 @@ class SubscriptionTest extends TestCase
             'ends_at' => Carbon::yesterday(),
         ]);
         $this->assertTrue($subscription->pastDue());
-        $this->assertTrue($subscription->isCanceled());
+        $this->assertTrue($subscription->isCancelled());
         $this->assertFalse($subscription->renews());
         $this->assertFalse($subscription->valid());
     }
@@ -32,7 +32,7 @@ class SubscriptionTest extends TestCase
             'ends_at' => Carbon::today(),
         ]);
 
-        $this->assertFalse($subscription->isCanceled());
+        $this->assertFalse($subscription->isCancelled());
         $this->assertFalse($subscription->pastDue());
         $this->assertTrue($subscription->active());
     }
@@ -115,7 +115,7 @@ class SubscriptionTest extends TestCase
         $this->assertInstanceOf(Builder::class, Subscription::query()->active());
 
         $subscription->update(['paystack_status' => 'complete']);
-        $this->assertInstanceOf(Builder::class, Subscription::query()->cancel());
+        $this->assertInstanceOf(Builder::class, Subscription::query()->cancelled());
     }
 
     public function test_that_exception_is_thrown_for_invalid_transaction()

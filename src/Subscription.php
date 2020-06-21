@@ -89,7 +89,7 @@ class Subscription extends Model
         $ends_at = Carbon::parse($this->endsAt());
 
         return (
-            ($this->paystack_status === 'active' || $this->isCanceled())
+            ($this->paystack_status === 'active' || $this->isCancelled())
             && ($ends_at->isToday() || $ends_at->isFuture())
         );
     }
@@ -104,7 +104,7 @@ class Subscription extends Model
         $ends_at = Carbon::parse($this->endsAt());
 
         return (
-            ($this->isCanceled())
+            ($this->isCancelled())
             && ($ends_at->isPast())
         );
     }
@@ -114,7 +114,7 @@ class Subscription extends Model
      *
      * @return bool
      */
-    public function isCanceled()
+    public function isCancelled()
     {
         return $this->paystack_status === 'complete';
     }
@@ -138,7 +138,7 @@ class Subscription extends Model
      * @param  \Illuminate\Database\Eloquent\Builder  $query
      * @return void
      */
-    public function scopeCancel($query)
+    public function scopeCancelled($query)
     {
         $query->where(function ($query) {
             $query->where('paystack_status', '==', 'complete');
@@ -189,7 +189,7 @@ class Subscription extends Model
      */
     public function cancel()
     {
-        if ($this->isCanceled()) {
+        if ($this->isCancelled()) {
             return $this;
         }
         $subscription = $this->asPaystackSubscription();
@@ -215,7 +215,7 @@ class Subscription extends Model
      */
     public function enable()
     {
-        if (! $this->isCanceled()) {
+        if (! $this->isCancelled()) {
             return $this;
         }
 

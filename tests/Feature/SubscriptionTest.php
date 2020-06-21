@@ -47,7 +47,7 @@ class SubscriptionTest extends FeatureTestCase
         $subscription->cancel();
 
         $this->assertTrue($subscription->active());
-        $this->assertTrue($subscription->isCanceled());
+        $this->assertTrue($subscription->isCancelled());
         $this->assertFalse($subscription->renews());
         $this->assertFalse($subscription->pastDue());
 
