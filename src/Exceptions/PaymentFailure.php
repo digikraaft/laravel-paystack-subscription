@@ -3,8 +3,6 @@
 
 namespace Digikraaft\PaystackSubscription\Exceptions;
 
-use Digikraaft\Paystack\Transaction as PaystackTransaction;
-
 class PaymentFailure extends \Exception
 {
 
@@ -34,5 +32,4 @@ class PaymentFailure extends \Exception
             "The transaction `{$transaction->data->id}` does not belong to this plan `$plan`."
         );
     }
-
 }

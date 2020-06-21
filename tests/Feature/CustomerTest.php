@@ -3,7 +3,6 @@
 
 namespace Digikraaft\PaystackSubscription\Tests\Feature;
 
-
 class CustomerTest extends FeatureTestCase
 {
     public function test_customers_in_paystack_can_be_updated()

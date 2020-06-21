@@ -2,8 +2,6 @@
 
 namespace Digikraaft\PaystackSubscription;
 
-use Digikraaft\PaystackSubscription\Commands\PaystackSubscriptionCommand;
-use Digikraaft\PaystackSubscription\Http\Controllers\PaymentController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 

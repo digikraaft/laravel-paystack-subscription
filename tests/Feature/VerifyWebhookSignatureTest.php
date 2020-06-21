@@ -6,7 +6,6 @@ namespace Digikraaft\PaystackSubscription\Tests\Feature;
 use Digikraaft\PaystackSubscription\Http\Middleware\VerifyWebhookSignature;
 use Digikraaft\PaystackSubscription\Tests\TestCase;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
 class VerifyWebhookSignatureTest extends TestCase

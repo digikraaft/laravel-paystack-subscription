@@ -3,8 +3,6 @@
 
 namespace Digikraaft\PaystackSubscription\Exceptions;
 
-use Digikraaft\PaystackSubscription\Subscription;
-
 class SubscriptionUpdateFailure extends \Exception
 {
     /**
@@ -46,6 +44,4 @@ class SubscriptionUpdateFailure extends \Exception
             "The user \"{$owner->name}\" is already subscribed to the plan \"{$plan}\"."
         );
     }
-
-
 }

@@ -24,7 +24,6 @@ class WebhookControllerTest extends FeatureTestCase
 
     public function test_subscription_is_updated()
     {
-
         config()->set(
             'paystacksubscription.model',
             User::class

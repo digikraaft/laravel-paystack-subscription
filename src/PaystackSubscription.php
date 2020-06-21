@@ -2,7 +2,6 @@
 
 namespace Digikraaft\PaystackSubscription;
 
-
 class PaystackSubscription
 {
     /**
@@ -21,5 +20,4 @@ class PaystackSubscription
 
         return (new $model)->where('paystack_id', $paystackId)->first();
     }
-
 }
