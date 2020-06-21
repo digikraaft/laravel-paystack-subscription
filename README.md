@@ -1,9 +1,6 @@
 # Introduction
 A simple, fluent interface to [Paystack's](https://paystack.com/>) subscription billing services. It takes the pain of implementing subscription management off you.
 
-[![Build Status](https://travis-ci.com/digikraaft/laravel-paystack-subscription.svg?branch=master)](https://travis-ci.com/digikraaft/laravel-paystack-subscription)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/digikraaft/laravel-paystack-subscription/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/digikraaft/laravel-paystack-subscription/?branch=master)
-[![Code Intelligence Status](https://scrutinizer-ci.com/g/digikraaft/laravel-paystack-subscription/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 

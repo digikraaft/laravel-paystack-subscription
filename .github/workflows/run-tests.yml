@@ -7,11 +7,12 @@ jobs:
   test:
     runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: true
       matrix:
+        os: [ubuntu-latest, windows-latest]
         php: [7.4]
         laravel: [^7.*, ^6.*]
         dependency-version: [prefer-lowest, prefer-stable]
-        os: [ubuntu-latest, windows-latest]
         include:
           - laravel: 7.*
             testbench: 5.*
