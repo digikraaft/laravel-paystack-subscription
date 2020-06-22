@@ -197,20 +197,20 @@ $user->newSubscription('default', 'PLN_paystackplan_code')->create(null, $author
 ```
 
 ### Aditional Details
-If you would like to specify additional customer, 
+If you would like to specify additional customer information, 
 you may do so by passing them as the third argument to the `create` method:
 ```
 $user->newSubscription('default', 'PLN_paystackplan_code')->create($transactionId, null, [
     'email' => $email,
 ]);
 ```
-The additional fields specified my be supported by Paystack's API.
+The additional fields specified must be supported by Paystack's API.
 
 ## Checking Subscription Status
 Once a user is subscribed to your application, you may easily check their 
 subscription status using a variety of convenient methods. 
 First, the `subscribed` method returns `true` if the user has an active subscription, 
-even if the subscription is canceled and is due not to renew at the end of the billing period:
+even if the subscription is cancelled and is due not to renew at the end of the billing period:
 ```
 if ($user->subscribed('default')) {
     //
@@ -236,16 +236,16 @@ The `subscribedToPlan` method may be used to determine if the user is subscribed
 to a given plan based on a given Paystack plan code. 
 In this example, we will determine if the user's `default` subscription is actively subscribed to the `PLN_paystackplan_code` plan:
 ```
-if ($user->subscribedToPlan('monthly', 'default')) {
+if ($user->subscribedToPlan('PLN_paystackplan_code', 'default')) {
     //
 }
 ```
 
 By passing an array to the `subscribedToPlan` method, 
 you may determine if the user's `default` subscription 
-is actively subscribed to the `PLN_paystackplan_code_monthly` or the `PLN_paystackplan_code_yearly` plan:
+is actively subscribed to the `PLN_paystackplan_code` or the `PLN_paystackplan_code2` plan:
 ```
-if ($user->subscribedToPlan(['PLN_paystackplan_code_monthly', 'PLN_paystackplan_code_yearly'], 'default')) {
+if ($user->subscribedToPlan(['PLN_paystackplan_code', 'PLN_paystackplan_code2'], 'default')) {
     //
 }
 ```
@@ -289,7 +289,7 @@ if ($user->subscription('default')->pastDue()) {
     //
 }
 ```
-#### Subscription Scopes
+### Subscription Scopes
 The `active` and` cancelled` subscription states are also available as query scopes so that you may easily 
 query your database for subscriptions:
 ```
@@ -319,7 +319,7 @@ they will not be billed immediately. Instead, their subscription will be re-acti
 and they will be billed on the original billing cycle.
 
 # Handling Paystack Webhooks
-Paystack can notify your application various events via webhooks. 
+Paystack can notify your application about various events via webhooks. 
 By default, a route that points to this package's webhook controller is configured through the service provider. 
 This controller will handle all incoming webhook requests.
 
@@ -329,7 +329,7 @@ This controller can be extended to handle any webhook event you like.
 To ensure your application can handle Paystack webhooks, be sure to configure the webhook URL in the Paystack dashboard. 
 By default, this package's webhook controller listens to the `/paystack/webhook`
 
-##### Webhooks & CSRF Protection
+### Webhooks & CSRF Protection
 Since Paystack webhooks need to bypass Laravel's CSRF protection, be sure to list the URI as an exception in your 
 `VerifyCsrfToken` middleware or list the route outside of the `web` middleware group:
 ```
@@ -338,7 +338,7 @@ protected $except = [
 ];
 ```
 
-#### Defining Webhook Event Handlers
+### Defining Webhook Event Handlers
 If you have additional webhook events you would like to handle, 
 extend the Webhook controller. Your method names should correspond to this package's 
 expected convention, specifically, methods should be prefixed with `handle` and 
@@ -382,7 +382,7 @@ Both events contain the full payload of the Paystack webhook.
 
 You can find details about Paystack events [here](https://developers.paystack.co/docs/events)
 
-#### Verifying Webhook Signatures
+### Verifying Webhook Signatures
 To secure your webhooks, you may use Paystack's webhook signatures. For convenience, this package
 automatically includes a middleware which validates that the incoming Paystack webhook request is valid.
 
