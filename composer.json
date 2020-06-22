@@ -1,4 +1,5 @@
 {
+    "name": "digikraaft/laravel-paystack-subscription",
     "description": "A simple interface to Paystack's subscription billing services. It takes off the pain of implementing subscription management.",
     "keywords": [
         "digikraaft",
