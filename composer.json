@@ -6,7 +6,8 @@
         "laravel-paystack-subscription",
         "paystack",
         "subscription",
-        "billing"
+        "billing",
+        "payment"
     ],
     "homepage": "https://github.com/digikraaft/laravel-paystack-subscription",
     "license": "MIT",
