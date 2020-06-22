@@ -351,9 +351,9 @@ you should add a `handleInvoiceCreate` method to the controller:
 
 namespace App\Http\Controllers;
 
-use Digikraaft\PaystackSubscription\Http\Controllers\WebhookController as PaystackSubscriptionController;
+use Digikraaft\PaystackSubscription\Http\Controllers\WebhookController as PaystackWebhookController;
 
-class WebhookController extends PaystackSubscriptionController
+class WebhookController extends PaystackWebhookController
 {
     /**
      * Handle invoice create.
