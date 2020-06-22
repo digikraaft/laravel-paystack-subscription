@@ -10,24 +10,13 @@ jobs:
       matrix:
         php: [7.4]
         laravel: [^7.*, ^6.*]
-        dependency-version: [prefer-lowest, prefer-stable]
         include:
           - laravel: 7.*
             testbench: 5.*
           - laravel: 6.*
             testbench: 4.*
 
-    name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.dependency-version }}
-
-    services:
-      mysql:
-        image: mysql:5.7
-        env:
-          MYSQL_ALLOW_EMPTY_PASSWORD: yes
-          MYSQL_DATABASE: paystack_sub
-        ports:
-          - 3306
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+    name: P${{ matrix.php }} - L${{ matrix.laravel }}
 
     steps:
       - name: Checkout code
@@ -45,9 +34,9 @@ jobs:
             php-version: ${{ matrix.php }}
             extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick
             coverage: none
-
+    
       - name: Install dependencies
-        run: composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction --no-suggest
+        run: composer update --prefer-dist --no-interaction --no-suggest
 
       - name: Execute tests
         run: vendor/bin/phpunit
@@ -61,4 +50,3 @@ jobs:
           PAYSTACK_OTHER_CUSTOMER: ${{ secrets.PAYSTACK_OTHER_CUSTOMER }}
           PAYSTACK_TRANSACTION_REF: ${{ secrets.PAYSTACK_TRANSACTION_REF }}
           PAYSTACK_TRANSACTION_REF_INVALID: ${{ secrets.PAYSTACK_TRANSACTION_REF_INVALID }}
-          DB_PORT: ${{ job.services.mysql.ports[3306] }}
