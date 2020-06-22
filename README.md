@@ -82,7 +82,7 @@ php artisan vendor:publish --provider="Digikraaft\PaystackSubscritpion\PaystackS
 #### Database Migrations
 You will need to publish the database migrations with these commands:
 ```bash
-php artisan vendor:publish --provider="Digikraaft\Paystack\PaystackSubscritpionServiceProvider" --tag="migrations"
+php artisan vendor:publish --provider="Digikraaft\PaystackSubscritpion\PaystackSubscritpionServiceProvider" --tag="migrations"
 php artisan migrate
 ```
 The migrations will add several columns to your users table as well 
