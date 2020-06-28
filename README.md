@@ -433,6 +433,8 @@ Use the command below to run your tests:
 ``` bash
 composer test
 ```
+## More Good Stuff
+Check [here](https://github.com/digikraaft) for more awesome free stuff!
 
 ## Changelog
 
