@@ -1,6 +1,5 @@
 # Introduction
-Laravel Paystack Subscription offers a simple, fluent interface to [Paystack's](https://paystack.com/) subscription billing services. You don't need 
-to worry about writing subscription billing code anymore!
+Laravel Paystack Subscription offers a simple, fluent interface to [Paystack's](https://paystack.com/) subscription billing services. No need to worry about writing subscription billing code anymore!
 
 ![tests](https://github.com/digikraaft/laravel-paystack-subscription/workflows/tests/badge.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
