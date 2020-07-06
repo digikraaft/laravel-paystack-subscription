@@ -105,6 +105,7 @@ class User extends Authenticatable
 The package assumes that your Billable model will be the default App\User class that ships with Laravel. 
 If you wish to change this you can specify a different model in your .env file or in the published config
 file of the package:
+
 ```dotenv
 SUBSCRIPTION_MODEL = App\User
 ```
