@@ -196,7 +196,7 @@ to the `create` method:
 $user->newSubscription('default', 'PLN_paystackplan_code')->create(null, $authorizationCode);
 ```
 
-### Aditional Details
+### Additional Details
 If you would like to specify additional customer information, 
 you may do so by passing them as the third argument to the `create` method:
 ```
@@ -380,7 +380,7 @@ This package emits a `Digikraaft\PaystackSubscription\Events\WebhookReceived` ev
 and a `Digikraaft\PaystackSubscription\Events\WebhookHandled` event when a webhook was handled by the package. 
 Both events contain the full payload of the Paystack webhook.
 
-You can find details about Paystack events [here](https://developers.paystack.co/docs/events)
+You can find details about Paystack events [here](https://paystack.com/docs/payments/webhooks/#supported-events)
 
 ### Verifying Webhook Signatures
 To secure your webhooks, you may use Paystack's webhook signatures. For convenience, this package
