@@ -436,6 +436,10 @@ composer test
 ## More Good Stuff
 Check [here](https://github.com/digikraaft) for more awesome free stuff!
 
+## Alternatives
+- [laravel-paystack](https://github.com/unicodeveloper/laravel-paystack)
+- [Laravel Cashier - Paystack Edition](https://github.com/webong/cashier-paystack)
+
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
