@@ -376,16 +376,9 @@ Route::post(
     '\App\Http\Controllers\WebhookController@handleWebhook'
 );
 ```
-
-This package emits a `Digikraaft\PaystackSubscription\Events\WebhookReceived` event when a webhook is received, 
-and a `Digikraaft\PaystackSubscription\Events\WebhookHandled` event when a webhook was handled by the package. 
-Both events contain the full payload of the Paystack webhook.
+Under the hood, wehbook handling is done using [this package](https://github.com/digikraaft/laravel-paystack-webhooks)
 
 You can find details about Paystack events [here](https://paystack.com/docs/payments/webhooks/#supported-events)
-
-### Verifying Webhook Signatures
-To secure your webhooks, you may use Paystack's webhook signatures. For convenience, this package
-automatically includes a middleware which validates that the incoming Paystack webhook request is valid.
 
 ## Paystack API
 If you would like to interact with the Paystack objects directly, 
