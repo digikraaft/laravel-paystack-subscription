@@ -22,6 +22,7 @@
     "require": {
         "php": "^7.4",
         "ext-json": "^7.4",
+        "digikraaft/laravel-paystack-webhooks": "^1.0",
         "digikraaft/paystack-php": "^1.0",
         "dompdf/dompdf": "^0.8.5",
         "guzzlehttp/guzzle": "^6.5",
