@@ -5,6 +5,7 @@ namespace Digikraaft\PaystackSubscription\Tests\Unit;
 
 use Digikraaft\PaystackSubscription\Payment;
 use Digikraaft\PaystackSubscription\Tests\TestCase;
+use GuzzleHttp\Exception\ClientException;
 
 class PaymentTest extends TestCase
 {

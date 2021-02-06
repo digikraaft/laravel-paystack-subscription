@@ -95,16 +95,6 @@ class SubscriptionBuilder
         $this->owner->save();
 
         /** @var \Digikraaft\PaystackSubscription\Subscription $subscription */
-//        $subscription = $this->owner->subscriptions()->create([
-//            'name' => $this->name,
-//            'paystack_id' => $paystackSubscription->subscription_code,
-//            'paystack_status' => $paystackSubscription->status,
-//            'paystack_plan' => $paystackSubscription->plan->plan_code,
-//            'quantity' => $paystackSubscription->quantity,
-//            'email_token' => $paystackSubscription->email_token,
-//            'authorization' => $this->authorization,
-//            'ends_at' => $paystackSubscription->next_payment_date,
-//        ]);
         $subscription = Subscription::create([
             'name' => $this->name,
             'paystack_id' => $paystackSubscription->subscription_code,

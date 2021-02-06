@@ -5,6 +5,7 @@ namespace Digikraaft\PaystackSubscription;
 
 use Digikraaft\Paystack\Paystack;
 use Digikraaft\Paystack\Transaction;
+use GuzzleHttp\Exception\ClientException;
 
 class Payment
 {
@@ -17,11 +18,15 @@ class Payment
     public static function hasValidTransaction(string $trandactionRef)
     {
         Paystack::setApiKey(config('paystacksubscription.secret', env('PAYSTACK_SECRET')));
-        $transaction = Transaction::verify($trandactionRef);
-        if ($transaction->status && $transaction->data->status == 'success') {
-            return $transaction;
-        }
 
+        try {
+            $transaction = Transaction::verify($trandactionRef);
+            if ($transaction->status && $transaction->data->status == 'success') {
+                return $transaction;
+            }
+        } catch (ClientException $exception) {
+            return false;
+        }
         return false;
     }
 }

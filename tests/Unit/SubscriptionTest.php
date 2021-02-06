@@ -8,6 +8,7 @@ use Digikraaft\PaystackSubscription\Exceptions\SubscriptionUpdateFailure;
 use Digikraaft\PaystackSubscription\Subscription;
 use Digikraaft\PaystackSubscription\Tests\TestCase;
 use Digikraaft\PaystackSubscription\Tests\User;
+use GuzzleHttp\Exception\ClientException;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
@@ -20,7 +21,7 @@ class SubscriptionTest extends TestCase
             'ends_at' => Carbon::yesterday(),
         ]);
         $this->assertTrue($subscription->pastDue());
-        $this->assertTrue($subscription->isCancelled());
+        $this->assertFalse($subscription->isCancelled());
         $this->assertFalse($subscription->renews());
         $this->assertFalse($subscription->valid());
     }
@@ -33,7 +34,6 @@ class SubscriptionTest extends TestCase
         ]);
 
         $this->assertFalse($subscription->isCancelled());
-        $this->assertFalse($subscription->pastDue());
         $this->assertTrue($subscription->active());
     }
 
@@ -132,7 +132,7 @@ class SubscriptionTest extends TestCase
             User::class
         );
 
-        $this->expectException(PaymentFailure::class);
+        $this->expectException(ClientException::class);
         $user->newSubscription('main', env('PAYSTACK_PLAN'))
         ->create(env('PAYSTACK_TRANSACTION_ID_INVALID'));
     }
