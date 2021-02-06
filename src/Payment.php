@@ -27,6 +27,7 @@ class Payment
         } catch (ClientException $exception) {
             return false;
         }
+
         return false;
     }
 }

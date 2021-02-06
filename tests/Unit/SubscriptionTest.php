@@ -3,7 +3,6 @@
 namespace Digikraaft\PaystackSubscription\Tests\Unit;
 
 use Carbon\Carbon;
-use Digikraaft\PaystackSubscription\Exceptions\PaymentFailure;
 use Digikraaft\PaystackSubscription\Exceptions\SubscriptionUpdateFailure;
 use Digikraaft\PaystackSubscription\Subscription;
 use Digikraaft\PaystackSubscription\Tests\TestCase;

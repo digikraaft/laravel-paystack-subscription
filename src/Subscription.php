@@ -6,8 +6,8 @@
     use Carbon\Carbon;
     use Digikraaft\Paystack\Paystack;
     use Digikraaft\Paystack\Subscription as PaystackSubscription;
-    use Illuminate\Database\Eloquent\Model;
     use Digikraaft\PaystackSubscription\PaystackSubscription as PaystackSub;
+    use Illuminate\Database\Eloquent\Model;
 
     class Subscription extends Model
     {
