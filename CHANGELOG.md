@@ -2,6 +2,9 @@
 
 All notable changes to `laravel-paystack-subscription` will be documented in this file
 
+## 1.2.2 - 2021-04-27
+- Fixed issue with creating new subscription due to changes in the Paystack API
+
 ## 1.2.1 - 2021-02-06
 - Implemented the new paystack subscription statuses
 
