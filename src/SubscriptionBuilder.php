@@ -82,7 +82,6 @@
          */
         public function create(string $transactionId = null, string $authorization = null, array $customerOptions = [])
         {
-
             $customer = $this->getPaystackCustomer($customerOptions);
 
             if (is_null($authorization)) {
