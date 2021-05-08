@@ -1,6 +1,8 @@
 # Changelog
 
 All notable changes to `laravel-paystack-subscription` will be documented in this file
+## 1.2.3 - 2021-05-08
+- Updated `illuminate/database` as fix for the potential SQL injection vulnerability.
 
 ## 1.2.2 - 2021-04-27
 - Fixed issue with creating new subscription due to changes in the Paystack API

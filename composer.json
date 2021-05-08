@@ -27,7 +27,7 @@
         "dompdf/dompdf": "^0.8.5",
         "guzzlehttp/guzzle": "^6.5",
         "illuminate/contracts": "^7.15|^8.0",
-        "illuminate/database": "^7.15|^8.0",
+        "illuminate/database": "^7.15|^8.40",
         "illuminate/http": "^7.15|^8.0",
         "illuminate/notifications": "^7.15|^8.0",
         "illuminate/routing": "^7.15|^8.0",
