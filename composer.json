@@ -20,7 +20,7 @@
         }
     ],
     "require": {
-        "php": "^7.4",
+        "php": "^7.4|^8.0",
         "ext-json": "^7.4",
         "digikraaft/laravel-paystack-webhooks": "^1.0",
         "digikraaft/paystack-php": "^1.0",
