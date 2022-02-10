@@ -1,6 +1,9 @@
 # Changelog
 
 All notable changes to `laravel-paystack-subscription` will be documented in this file
+## 2.0.0 - 2022-02-10
+- Laravel 9
+
 ## 1.2.3 - 2021-05-08
 - Updated `illuminate/database` as fix for the potential SQL injection vulnerability.
 
