@@ -14,8 +14,12 @@ jobs:
         laravel: [8.*, 7.*, 6.*]
 
         include:
-          - laravel: 9.*
-            testbench: 7.*
+          - laravel: 8.*
+            testbench: 6.*
+          - laravel: 7.*
+            testbench: 5.*
+          - laravel: 6.*
+            testbench: 4.*
 
     name: P${{ matrix.php }} - L${{ matrix.laravel }}
 
