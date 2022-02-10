@@ -20,12 +20,18 @@
         }
     ],
     "require": {
-        "php": "^8.0|^8.1",
-        "digikraaft/laravel-paystack-webhooks": "^2.0",
-        "digikraaft/paystack-php": "^2.0",
-        "dompdf/dompdf": "^1.2",
-        "guzzlehttp/guzzle": "^7.3",
-        "laravel/framework": "^9.0"
+        "php": "^7.4|^8.0",
+        "digikraaft/laravel-paystack-webhooks": "^1.0",
+        "digikraaft/paystack-php": "^1.0",
+        "illuminate/contracts": "^7.15|^8.0",
+        "illuminate/database": "^7.15|^8.40",
+        "illuminate/http": "^7.15|^8.0",
+        "illuminate/notifications": "^7.15|^8.0",
+        "illuminate/routing": "^7.15|^8.0",
+        "illuminate/support": "^7.15|^8.0",
+        "illuminate/view": "^7.15|^8.0",
+        "nesbot/carbon": "^2.35",
+        "symfony/http-kernel": "^5.1"
     },
     "require-dev": {
         "orchestra/testbench": "^7.0",
