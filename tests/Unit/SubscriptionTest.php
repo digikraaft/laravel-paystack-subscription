@@ -60,7 +60,7 @@ class SubscriptionTest extends TestCase
             'ends_at' => Carbon::now()->addDays(2),
         ]);
 
-        $this->assertEquals(2, $subscription->daysLeft());
+        $this->assertEquals(1, $subscription->daysLeft());
     }
 
     public function test_that_it_can_return_user_that_owns_the_subscription()
