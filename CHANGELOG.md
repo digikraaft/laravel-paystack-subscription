@@ -1,6 +1,10 @@
 # Changelog
 
 All notable changes to `laravel-paystack-subscription` will be documented in this file
+
+## 2.1.0 - 2023-03-04
+- Support for Laravel 10
+
 ## 2.0.0 - 2022-07-05
 - Support for Laravel 9
 
