@@ -75,13 +75,13 @@ return [
 ```
 You can publish this config file with the following commands:
 ```bash
-php artisan vendor:publish --provider="Digikraaft\PaystackSubscritpion\PaystackSubscritpionServiceProvider" --tag="config"
+php artisan vendor:publish --provider="Digikraaft\PaystackSubscription\PaystackSubscriptionServiceProvider" --tag="config"
 ```
 
 #### Database Migrations
 You will need to publish the database migrations with these commands:
 ```bash
-php artisan vendor:publish --provider="Digikraaft\PaystackSubscritpion\PaystackSubscritpionServiceProvider" --tag="migrations"
+php artisan vendor:publish --provider="Digikraaft\PaystackSubscription\PaystackSubscriptionServiceProvider" --tag="migrations"
 php artisan migrate
 ```
 The migrations will add several columns to your users table as well 
