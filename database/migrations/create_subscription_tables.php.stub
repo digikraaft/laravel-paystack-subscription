@@ -28,7 +28,7 @@ class CreateSubscriptionTables extends Migration
          */
         Schema::create('dk_subscriptions', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger(app(config('paystacksubscription.model'))->getForeignKey());
             $table->string('name');
             $table->string('paystack_id')->unique();
             $table->string('paystack_status');
@@ -39,7 +39,7 @@ class CreateSubscriptionTables extends Migration
             $table->timestamp('ends_at')->nullable();
             $table->timestamps();
 
-            $table->index(['user_id', 'paystack_status']);
+            $table->index([app(config('paystacksubscription.model'))->getForeignKey(), 'paystack_status']);
         });
     }
 

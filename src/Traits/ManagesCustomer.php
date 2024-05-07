@@ -27,7 +27,7 @@ trait ManagesCustomer
      */
     public function hasPaystackId()
     {
-        return ! is_null($this->paystack_id);
+        return ! (is_null($this->paystackId()) || $this->paystackId() == '');
     }
 
     /**
@@ -57,7 +57,7 @@ trait ManagesCustomer
      *
      * @throws \Digikraaft\PaystackSubscription\Exceptions\InvalidCustomer
      */
-    protected function assertCustomerExists()
+    protected function assertCustomerExists(): void
     {
         if (! $this->hasPaystackId()) {
             throw InvalidCustomer::doesNotExist($this);
@@ -72,7 +72,7 @@ trait ManagesCustomer
      *
      * @throws \Digikraaft\PaystackSubscription\Exceptions\CustomerAlreadyExist
      */
-    public function createAsPaystackCustomer(array $options = [])
+    public function createAsPaystackCustomer(array $options = []): PaystackCustomer
     {
         if ($this->hasPaystackId()) {
             throw CustomerAlreadyExist::exists($this);
@@ -117,9 +117,9 @@ trait ManagesCustomer
      *
      * @param array $options
      * @return \Digikraaft\Paystack\Customer
-     * @throws \Digikraaft\PaystackSubscription\Exceptions\InvalidCustomer
+     * @throws \Digikraaft\PaystackSubscription\Exceptions\InvalidCustomer|CustomerAlreadyExist
      */
-    public function createOrGetPaystackCustomer(array $options = [])
+    public function createOrGetPaystackCustomer(array $options = []): PaystackCustomer
     {
         if ($this->hasPaystackId()) {
             return $this->asPaystackCustomer();
@@ -131,7 +131,7 @@ trait ManagesCustomer
     /**
      * Get the Paystack customer for the model.
      *
-     * @return \Digikraaft\Paystack\Customer
+     * @return array|object
      * @throws \Digikraaft\PaystackSubscription\Exceptions\InvalidCustomer
      */
     public function asPaystackCustomer()
@@ -149,7 +149,7 @@ trait ManagesCustomer
      *
      * @return string|null
      */
-    public function paystackEmail()
+    public function paystackEmail(): ?string
     {
         return $this->email;
     }
