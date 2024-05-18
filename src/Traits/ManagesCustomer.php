@@ -115,10 +115,9 @@ trait ManagesCustomer
      * Get the Paystack customer instance for the current user or create one.
      *
      * @param array $options
-     * @return \Digikraaft\Paystack\Customer
      * @throws \Digikraaft\PaystackSubscription\Exceptions\InvalidCustomer|CustomerAlreadyExist
      */
-    public function createOrGetPaystackCustomer(array $options = []): PaystackCustomer
+    public function createOrGetPaystackCustomer(array $options = [])
     {
         if ($this->hasPaystackId()) {
             return $this->asPaystackCustomer();
