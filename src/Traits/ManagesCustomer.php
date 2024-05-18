@@ -68,11 +68,9 @@ trait ManagesCustomer
      * Create a Paystack customer for the given model.
      *
      * @param  array  $options
-     * @return \Digikraaft\Paystack\Customer
-     *
      * @throws \Digikraaft\PaystackSubscription\Exceptions\CustomerAlreadyExist
      */
-    public function createAsPaystackCustomer(array $options = []): PaystackCustomer
+    public function createAsPaystackCustomer(array $options = [])
     {
         if ($this->hasPaystackId()) {
             throw CustomerAlreadyExist::exists($this);
@@ -85,6 +83,7 @@ trait ManagesCustomer
         // Here we will create the customer instance on Paystack and store the ID of the
         // user from Paystack. This ID will allow us to retrieve users from Paystack later when we need to work.
         Paystack::setApiKey(config('paystacksubscription.secret', env('PAYSTACK_SECRET')));
+
         $customer = PaystackCustomer::create(
             $options,
         );
