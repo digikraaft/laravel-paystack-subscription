@@ -2,6 +2,9 @@
 
 All notable changes to `laravel-paystack-subscription` will be documented in this file
 
+## 3.0 - 2024-10-05
+- Support for Laravel 11
+- 
 ## 2.1.0 - 2023-03-04
 - Support for Laravel 10
 
