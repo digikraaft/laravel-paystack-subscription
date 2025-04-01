@@ -25,6 +25,10 @@
             'updated_at',
         ];
 
+        protected array $casts = [
+            'ends_at' => 'datetime'
+        ];
+
         /**
          * Get the user that owns the subscription.
          *
